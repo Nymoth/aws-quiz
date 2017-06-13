@@ -1,0 +1,6 @@
+.answer {
+  margin: 5px 0;
+}
+.answer.correct.visible {
+  font-weight: bold;
+}

@@ -1,0 +1,16 @@
+.submitButton {
+  margin: 1em 0;
+}
+
+.wrongNumberAnswersChosen {
+  color: #B71C1C;
+  font-weight: bold;
+}
+
+.correctAnswerMsg {
+  color: #33691E;
+}
+
+.wrongAnswerMsg {
+  color: #B71C1C;
+}

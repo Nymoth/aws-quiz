@@ -1,0 +1,12 @@
+.stage-wrapper {
+  text-align: center;
+}
+
+.not-prepared-image {
+  width: 100%;
+  max-width: 400px;
+}
+
+.inline-button {
+  display: inline-block;
+}
