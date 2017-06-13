@@ -2,7 +2,7 @@
   "name": "aws-quiz",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://nymoth.github.io/aws-quiz",
+  "homepage": "https://nymoth.github.io/aws-quiz",
   "dependencies": {
     "material-ui": "^0.18.3",
     "npm": "^5.0.3",

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Route, HashRouter } from 'react-router-dom'
 
 import getQuestions from './services/questions'
 import Layout from './components/Layout/';
@@ -16,13 +16,13 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Layout>
           <Route exact={true} path="/" component={Home} />
           <Route exact={true} path="/list" render={() => <List data={this.state.data$} />} />
           <Route exact={true} path="/quiz" component={() => <Quiz data={this.state.data$} />} />
         </Layout>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
