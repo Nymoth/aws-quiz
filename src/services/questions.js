@@ -1,7 +1,7 @@
 import config from '../config.json';
 
 const getQuestions = () => {
-  return fetch(`https://api.trello.com/1/lists/${config.trelloListId}/cards?checklists=all&fields=name,labels`)
+  return fetch(`https://api.trello.com/1/lists/${config.trelloListId}/cards?checklists=all&fields=name,labels,desc`)
     .then(res => res.json())
     .then(data => {
       const questions = [];
@@ -12,6 +12,7 @@ const getQuestions = () => {
         const question = {
           id: card.id,
           title: card.name,
+          desc: card.desc,
           labels: cardLabels,
           answers,
           correctAnswers,
@@ -27,15 +28,15 @@ const getQuestions = () => {
 }
 
 const getAnswers = items => {
-    const answers = [];
-    const correctAnswers = [];
-    items.forEach(item => {
-      answers.push({ id: item.id, text: item.name, selected: false })
-      if (item.state === 'complete') {
-        correctAnswers.push(item.id);
-      }
-    });
-    return { answers, correctAnswers };
-  }
+  const answers = [];
+  const correctAnswers = [];
+  items.forEach(item => {
+    answers.push({ id: item.id, text: item.name, selected: false })
+    if (item.state === 'complete') {
+      correctAnswers.push(item.id);
+    }
+  });
+  return { answers, correctAnswers };
+}
 
 export default getQuestions;

@@ -68,7 +68,7 @@ class QuestionForm extends Component {
                   this.props.question.answers.map((answer, i) => (
                     <RadioButton
                       key={answer.id}
-                      label={answer.text}
+                      label={`${String.fromCharCode(65 + i)}. ${ answer.text}`}
                       labelStyle={this.state.answerSubmitted && this.props.question.correctAnswers.includes(answer.id) ? correctAnswerStyle : null}
                       disabled={this.state.answerSubmitted}
                       value={answer.id} />
@@ -80,7 +80,7 @@ class QuestionForm extends Component {
               this.props.question.answers.map((answer, i) => (
                 <Checkbox
                   key={answer.id}
-                  label={answer.text}
+                  label={`${String.fromCharCode(65 + i)}. ${ answer.text}`}
                   labelStyle={this.state.answerSubmitted && this.props.question.correctAnswers.includes(answer.id) ? correctAnswerStyle : null}
                   checked={this.state.answers.includes(answer.id)}
                   disabled={this.state.answerSubmitted}
@@ -94,6 +94,7 @@ class QuestionForm extends Component {
           this.state.answerSubmitted ? (
             <div>
               {this.state.answeredCorrectly ? <p className="correctAnswerMsg">That's correct! Yeah!!</p> : <p className="wrongAnswerMsg">Wrong!!!1!</p>}
+              <p>{this.props.question.desc}</p>
               <RaisedButton className="submitButton" label="Next question" primary={true} onTouchTap={this.nextQuestion} />
             </div>
           ) : (

@@ -74,21 +74,23 @@ class List extends Component {
           open={this.state.filterDialogOpen}
           onRequestClose={this.closeFilterDialog}
           actions={filterDialogActions}>
-          <TextField
-            floatingLabelText="Filter by question statement"
-            value={this.state.textFilter}
-            onChange={this.changeTextFilter}
-            fullWidth={true} />
-          <div>
-            <p>Filter by topic</p>
-            {this.state.labels.map(label => (
-              <Checkbox
-                key={label.id}
-                labelStyle={{ marginTop: '-8px' }}
-                checked={this.state.labelFilter[label.id]}
-                onCheck={() => this.changeLabelFilter(label.id)}
-                label={<Label label={label.name} />} />
-            ))}
+          <div className="filters-dialog">
+            <TextField
+              floatingLabelText="Filter by question statement"
+              value={this.state.textFilter}
+              onChange={this.changeTextFilter}
+              fullWidth={true} />
+            <div className="topic-list">
+              <p>Filter by topic</p>
+              {this.state.labels.map(label => (
+                <Checkbox
+                  key={label.id}
+                  labelStyle={{ marginTop: '-8px' }}
+                  checked={this.state.labelFilter[label.id]}
+                  onCheck={() => this.changeLabelFilter(label.id)}
+                  label={<Label label={label.name} />} />
+              ))}
+            </div>
           </div>
         </Dialog>
         <div>

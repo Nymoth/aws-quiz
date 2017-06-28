@@ -35,6 +35,7 @@ class QuestionList extends Component {
               })
             }
           </ol>
+          {this.state.correctAnswersVisible ? <p>{this.props.question.desc}</p> : ''}
           <FlatButton label={`${this.state.correctAnswersVisible ? 'Hide' : 'Show'} correct answers`} onTouchTap={this.toggleCorrectAnswers} />
         </CardText>
       </Card>

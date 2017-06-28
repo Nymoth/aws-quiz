@@ -38,7 +38,7 @@ class Layout extends Component {
             iconElementLeft={<span></span>}
             iconElementRight={<IconButton onTouchTap={this.toggleDrawer}><NavigationClose /></IconButton>} />
           <Link to="/" onTouchTap={this.toggleDrawer}><MenuItem leftIcon={<ActionHome />}>Home</MenuItem></Link>
-          <Link to="/quiz" onTouchTap={this.toggleDrawer}><MenuItem leftIcon={<AvPlayArrow />}>Start quiz</MenuItem></Link>
+          <Link to="/quiz" onTouchTap={this.toggleDrawer}><MenuItem leftIcon={<AvPlayArrow />}>Quiz</MenuItem></Link>
           <Link to="/list" onTouchTap={this.toggleDrawer}><MenuItem leftIcon={<ActionList />}>Questions list</MenuItem></Link>
         </Drawer>
 
